@@ -7,7 +7,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view /> -->
+     -->
   </div>
 </template>
 
@@ -45,5 +45,23 @@ export default {
       text-decoration: underline;
     }
   }
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 40em;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+button {
+  background: #eee;
+  border: 0.1em solid #eee;
+  padding: 0.5em 1em;
 }
 </style>
