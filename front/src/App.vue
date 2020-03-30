@@ -60,6 +60,7 @@ button {
   padding: 0.5em 1em;
 
   &:not(:disabled) {
+    cursor: pointer;
     &:hover {
       border-color: #ddd;
       background: #ddd;

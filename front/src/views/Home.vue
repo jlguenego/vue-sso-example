@@ -5,7 +5,7 @@
       We have a secret...<br />
       and if you want to know it please connect...
     </p>
-    <button class="primary">Go to login page ></button>
+    <router-link class="primary" tag="button" to="/login">Go to login page ></router-link>
   </main>
 </template>
 
