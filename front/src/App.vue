@@ -24,6 +24,10 @@ export default {
 <style lang="scss">
 @import "../node_modules/normalize.css/normalize.css";
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 #app {
   display: flex;
   flex-flow: column;
@@ -84,5 +88,23 @@ button {
       }
     }
   }
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+label {
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 1em;
+}
+
+input {
+  padding: 0.5em 1em;
+  border: 0.1em solid #eee;
+  width: 100%;
 }
 </style>
