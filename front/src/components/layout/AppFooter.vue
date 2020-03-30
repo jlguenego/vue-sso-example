@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <router-link to="/about">Legal</router-link>
+    <router-link to="/legal">Legal</router-link>
   </footer>
 </template>
 
