@@ -2,7 +2,7 @@
   <main>
     <h1>Welcome !</h1>
     <p>We have a secret, and if you want to know it please connect ;)</p>
-    <button>Go to login page ></button>
+    <button class="primary">Go to login page ></button>
   </main>
 </template>
 

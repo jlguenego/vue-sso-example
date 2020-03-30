@@ -47,6 +47,7 @@ main {
   width: 100%;
   max-width: 40em;
   align-items: center;
+  padding: 0.5em;
 }
 
 h1 {
@@ -57,5 +58,30 @@ button {
   background: #eee;
   border: 0.1em solid #eee;
   padding: 0.5em 1em;
+
+  &:not(:disabled) {
+    &:hover {
+      border-color: #ddd;
+      background: #ddd;
+    }
+    &:active {
+      border-color: #ccc;
+      background: #ccc;
+    }
+
+    &.primary {
+      border-color: #333;
+      background: #333;
+      color: white;
+      &:hover {
+        border-color: #444;
+        background: #444;
+      }
+      &:active {
+        border-color: #555;
+        background: #555;
+      }
+    }
+  }
 }
 </style>
