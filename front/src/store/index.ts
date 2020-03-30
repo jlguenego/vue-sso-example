@@ -6,12 +6,12 @@ interface ADUser {
   givenName: string;
 }
 
-interface User {
+export interface User {
   displayName: string;
   adUser: ADUser;
 }
 
-interface State {
+export interface State {
   user?: User;
 }
 
