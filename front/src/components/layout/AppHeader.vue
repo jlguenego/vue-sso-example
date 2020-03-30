@@ -17,5 +17,12 @@ export default class AppHeader extends Vue {}
 header {
   background: #eee;
   height: 3em;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+  span {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 }
 </style>
