@@ -1,9 +1,9 @@
 <template>
   <header>
-    <a href="#">
+    <router-link to="/">
       <img src="../../assets/logo.svg" alt="Logo" />
       <span>Vue SSO Example</span>
-    </a>
+    </router-link>
   </header>
 </template>
 

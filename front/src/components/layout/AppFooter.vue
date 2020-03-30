@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <a href="#">Legal</a>
+    <router-link to="/about">Legal</router-link>
   </footer>
 </template>
 
