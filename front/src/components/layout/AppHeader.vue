@@ -1,6 +1,7 @@
 <template>
   <header>
     <a href="#">
+      <img src="../../assets/logo.svg" alt="Logo" />
       <span>Vue SSO Example</span>
     </a>
   </header>
@@ -20,6 +21,15 @@ header {
   display: flex;
   align-items: center;
   padding: 0 0.5em;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    height: 2em;
+    padding-right: 0.5em;
+  }
   span {
     font-weight: bold;
     font-size: 1.2em;
