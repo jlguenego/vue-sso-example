@@ -1,7 +1,9 @@
 <template>
   <main>
     <h1>Login page</h1>
-    <button class="primary" v-focus>Connect with SSO</button>
+    <button class="primary" v-focus @click.prevent="connectWithSSO">
+      Connect with SSO
+    </button>
     <div class="or"><span>or</span></div>
     <form>
       <label>
@@ -16,6 +18,27 @@
     </form>
   </main>
 </template>
+
+
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import store from "../store";
+
+@Component
+export default class Login extends Vue {
+  async connectWithSSO() {
+    console.log("connect with SSO");
+    const response = await this.$http.get("/protected/connect");
+    console.log("response: ", response);
+    const json = await response.json();
+    console.log("json: ", json);
+    // send the user to the store
+    store.commit("connect", json);
+  }
+}
+</script>
+
+
 
 <style scoped lang="scss">
 main {
