@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Login page</h1>
-    <button class="primary">Connect with SSO</button>
+    <button class="primary" v-focus>Connect with SSO</button>
     <div class="or"><span>or</span></div>
     <form>
       <label>
