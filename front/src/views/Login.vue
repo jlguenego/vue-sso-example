@@ -27,13 +27,18 @@ import store from "../store";
 @Component
 export default class Login extends Vue {
   async connectWithSSO() {
-    console.log("connect with SSO");
-    const response = await this.$http.get("/protected/connect");
-    console.log("response: ", response);
-    const json = await response.json();
-    console.log("json: ", json);
-    // send the user to the store
-    store.commit("connect", json);
+    try {
+      console.log("connect with SSO");
+      const response = await this.$http.get("/protected/connect");
+      console.log("response: ", response);
+      const json = await response.json();
+      console.log("json: ", json);
+      // send the user to the store
+      store.commit("connect", json.user);
+      this.$router.push("/");
+    } catch (error) {
+      console.error("error: ", error);
+    }
   }
 }
 </script>
