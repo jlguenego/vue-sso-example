@@ -3,11 +3,11 @@
     <app-header></app-header>
     <app-body></app-body>
     <app-footer></app-footer>
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view />
+    <router-view /> -->
   </div>
 </template>
 
@@ -31,6 +31,10 @@ export default {
 @import "../node_modules/normalize.css/normalize.css";
 
 #app {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+
   font-family: sans-serif;
 
   a {
