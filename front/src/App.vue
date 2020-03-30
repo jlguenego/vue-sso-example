@@ -16,13 +16,12 @@ export default {
   components: {
     AppHeader,
     AppBody,
-    AppFooter
-  }
+    AppFooter,
+  },
 };
 </script>
 
 <style lang="scss">
-
 @import "../node_modules/normalize.css/normalize.css";
 
 #app {
