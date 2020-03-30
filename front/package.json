@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/chai": "^4.2.8",
     "@types/mocha": "^5.2.4",
+    "@types/vue-resource": "^1.3.6",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "@vue/cli-plugin-e2e-cypress": "~4.2.0",
