@@ -5,7 +5,7 @@
       Connect with SSO
     </button>
     <div class="or"><span>or</span></div>
-    <form @submit="submit">
+    <form @submit.prevent="noop">
       <label>
         <div>Login</div>
         <input
@@ -22,7 +22,7 @@
           v-model="password"
         />
       </label>
-      <button type="button" v-async-btn="submit">Connect</button>
+      <button type="submit" v-async-btn="submit">Connect</button>
       <p class="error">{{ error }}</p>
     </form>
   </main>
@@ -50,7 +50,12 @@ export default class Login extends Vue {
     }
   }
 
+  noop() {
+    // do nothing
+  }
+
   async submit() {
+    console.log("submit");
     this.error = "";
     try {
       const response = await this.$http.post("/action/connect", {
