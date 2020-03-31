@@ -12,7 +12,7 @@ git clone https://github.com/jlguenego/vue-sso-example.git
 cd vue-sso-example
 cd back
 npm i
-npm start
+npm run serve
 
 // open another terminal
 cd vue-sso-example
