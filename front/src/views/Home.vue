@@ -15,7 +15,10 @@
       {{ state.user.displayName }}!
     </h2>
     <button @click="disconnect">Disconnect</button>
-    <button class="primary" @click="showSecret">Show the secret</button>
+    <button v-if="secret === ''" class="primary" @click="showSecret">
+      Show the secret
+    </button>
+    <button v-else class="primary" @click="hideSecret">Hide the secret</button>
     <p>{{ secret }}</p>
   </main>
 </template>
@@ -41,6 +44,10 @@ export default class Home extends Vue {
     }
   }
 
+  hideSecret() {
+    this.secret = "";
+  }
+
   async disconnect() {
     try {
       await this.$http.get("/action/disconnect");
@@ -55,6 +62,12 @@ export default class Home extends Vue {
 
 
 <style scoped lang="scss">
+
+main {
+  justify-content: flex-start;
+  height: 18em;
+}
+
 p,
 h1,
 h2 {
