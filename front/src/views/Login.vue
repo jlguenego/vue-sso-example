@@ -8,11 +8,11 @@
     <form>
       <label>
         <div>Login</div>
-        <input type="text" />
+        <input type="text" placeholder="Enter your windows login" />
       </label>
       <label>
         <div>Password</div>
-        <input type="password" />
+        <input type="password" placeholder="and its password" />
       </label>
       <button>Connect</button>
     </form>
@@ -28,12 +28,8 @@ import store from "../store";
 export default class Login extends Vue {
   async connectWithSSO() {
     try {
-      console.log("connect with SSO");
-      const response = await this.$http.get("/protected/connect");
-      console.log("response: ", response);
+      const response = await this.$http.get("/action/connect");
       const json = await response.json();
-      console.log("json: ", json);
-      // send the user to the store
       store.commit("connect", json.user);
       this.$router.push("/");
     } catch (error) {
