@@ -14,7 +14,7 @@
       Welcome <br />
       {{ state.user.displayName }}!
     </h2>
-    <button>Disconnect</button>
+    <button @click="disconnect">Disconnect</button>
     <button class="primary" @click="showSecret">Show the secret</button>
     <p>{{ secret }}</p>
   </main>
@@ -40,6 +40,15 @@ export default class Home extends Vue {
       console.log("error: ", error);
     }
   }
+
+  async disconnect() {
+    try {
+      await this.$http.get("/action/disconnect");
+      store.commit("disconnect");
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  }
 }
 </script>
 
@@ -56,7 +65,6 @@ button {
   margin: 0.5em 0;
   width: 19em;
 }
-
 </style>
 
 
