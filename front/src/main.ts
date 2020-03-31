@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./directives/focus";
+import "./directives/async-btn";
 import VueResource from "vue-resource";
 
 Vue.config.productionTip = false;

@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>Login page</h1>
-    <button class="primary" v-focus @click.prevent="connectWithSSO">
+    <button class="primary" v-focus v-async-btn="connectWithSSO">
       Connect with SSO
     </button>
     <div class="or"><span>or</span></div>
