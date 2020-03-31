@@ -28,6 +28,11 @@ app.use("/action/connect", sso.auth(), (req, res) => {
   res.status(401).end();
 });
 
+app.use("/action/disconnect", (req, res) => {
+  delete req.session.sso;
+  res.end();
+});
+
 app.use(express.static("."));
 app.use(serveIndex(".", { icons: true }));
 
