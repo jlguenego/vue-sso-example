@@ -115,9 +115,9 @@ $color2: #ddd;
 $pcolor1: #555;
 $pcolor2: #333;
 
-button.async-btn-working:not(:disabled),
-button.async-btn-working:not(:disabled):hover,
-button.async-btn-working:not(:disabled):active {
+button.async-btn-working:disabled,
+button.async-btn-working:disabled:hover,
+button.async-btn-working:disabled:active {
   position: relative;
   z-index: 0;
   background: transparent;
@@ -142,6 +142,7 @@ button.async-btn-working:not(:disabled):active {
   }
 
   &.primary {
+    color: white;
     &::before {
       background: repeating-linear-gradient(
         45deg,
