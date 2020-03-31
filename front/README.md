@@ -1,9 +1,5 @@
 # front
 
-Demo of [node-expose-sspi](https://github.com/jlguenego/node-expose-sspi) module.
-
-Using the Front-end framework VueJS.
-
 ## Project setup
 ```
 npm install
