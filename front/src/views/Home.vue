@@ -10,7 +10,10 @@
     </router-link>
   </main>
   <main v-else>
-    <h1>Welcome {{ state.user.displayName }}!</h1>
+    <h2>
+      Welcome <br />
+      {{ state.user.displayName }}!
+    </h2>
   </main>
 </template>
 
@@ -29,7 +32,7 @@ export default class Home extends Vue {
 
 
 <style scoped lang="scss">
-p {
+p, h1, h2 {
   text-align: center;
 }
 </style>
