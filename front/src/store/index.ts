@@ -18,10 +18,15 @@ export interface State {
 Vue.use(Vuex);
 
 export default new Vuex.Store<State>({
-  state: {},
+  state: {
+    user: undefined,
+  },
   mutations: {
     connect(state: State, user: User) {
-      state.user = user;
+      Vue.set(state, "user", user);
+    },
+    disconnect(state: State) {
+      Vue.set(state, "user", undefined);
     },
   },
   actions: {},
