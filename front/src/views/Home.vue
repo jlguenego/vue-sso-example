@@ -14,6 +14,8 @@
       Welcome <br />
       {{ state.user.displayName }}!
     </h2>
+    <button class="primary" @click="showSecret">Show the secret</button>
+    <p>{{ secret }}</p>
   </main>
 </template>
 
@@ -26,13 +28,26 @@ import store, { User, State } from "../store";
 @Component
 export default class Home extends Vue {
   public state: State = store.state;
+  public secret = "";
+
+  async showSecret() {
+    try {
+      const response = await this.$http.get("/protected/secret");
+      const json = await response.json();
+      this.secret = JSON.stringify(json);
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  }
 }
 </script>
 
 
 
 <style scoped lang="scss">
-p, h1, h2 {
+p,
+h1,
+h2 {
   text-align: center;
 }
 </style>
