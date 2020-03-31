@@ -10,10 +10,15 @@
     </router-link>
   </main>
   <main v-else>
-    <h2>
+    <h2 v-if="!state.user.adUser">
       Welcome <br />
       {{ state.user.displayName }}!
     </h2>
+    <h2 v-else>
+      Welcome <br />
+      {{ state.user.adUser.givenName[0] }} {{ state.user.adUser.sn[0] }}!
+    </h2>
+    <p>Note: info from Active Directory</p>
     <button @click="disconnect">Disconnect</button>
     <button v-if="secret === ''" class="primary" @click="showSecret">
       Show the secret
