@@ -113,5 +113,6 @@ button {
 .error {
   text-align: center;
   color: red;
+  height: 1em;
 }
 </style>
