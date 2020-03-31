@@ -14,6 +14,7 @@
       Welcome <br />
       {{ state.user.displayName }}!
     </h2>
+    <button>Disconnect</button>
     <button class="primary" @click="showSecret">Show the secret</button>
     <p>{{ secret }}</p>
   </main>
@@ -50,6 +51,12 @@ h1,
 h2 {
   text-align: center;
 }
+
+button {
+  margin: 0.5em 0;
+  width: 19em;
+}
+
 </style>
 
 
