@@ -7,11 +7,18 @@ const app = express();
 
 app.use(session({ secret: "this is my secret session..." }));
 
+app.use("/protected", (req, res, next) => {
+  if (!req.session.sso) {
+    return res.status(401).end();
+  }
+  next();
+});
+
 app.use("/protected/secret", (req, res) => {
   res.json({ hello: "world" });
 });
 
-app.use("/protected/connect", sso.auth(), (req, res) => {
+app.use("/action/connect", sso.auth(), (req, res) => {
   if (req.sso) {
     req.session.sso = req.sso;
     res.json({ user: req.sso.user });
