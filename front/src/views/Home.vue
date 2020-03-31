@@ -28,11 +28,9 @@
   </main>
 </template>
 
-
-
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import store, { User, State } from "../store";
+import { Component, Vue } from "vue-property-decorator";
+import store, { State } from "../store";
 
 @Component
 export default class Home extends Vue {
@@ -64,10 +62,7 @@ export default class Home extends Vue {
 }
 </script>
 
-
-
 <style scoped lang="scss">
-
 main {
   justify-content: flex-start;
   height: 18em;
@@ -84,6 +79,3 @@ button {
   width: 19em;
 }
 </style>
-
-
-

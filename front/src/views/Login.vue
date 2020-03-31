@@ -28,11 +28,9 @@
   </main>
 </template>
 
-
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import store from "../store";
-import { HttpResponse } from "vue-resource/types/vue_resource";
 
 @Component
 export default class Login extends Vue {
@@ -77,8 +75,6 @@ export default class Login extends Vue {
   }
 }
 </script>
-
-
 
 <style scoped lang="scss">
 main {

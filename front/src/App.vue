@@ -122,7 +122,7 @@ button.async-btn-working:not(:disabled):active {
   overflow: hidden;
   &::before {
     z-index: -1;
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -2em;
