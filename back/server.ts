@@ -69,7 +69,8 @@ app.use("/action/disconnect", (req, res) => {
   res.end();
 });
 
-app.use(express.static("."));
-app.use(serveIndex(".", { icons: true }));
+const www = "../front/dist";
+app.use(express.static(www));
+app.use(serveIndex(www, { icons: true }));
 
 app.listen(3000, () => console.log("Server started on port 3000"));
