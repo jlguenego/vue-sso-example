@@ -110,8 +110,10 @@ input {
   width: 100%;
 }
 
-$color1: #555;
-$color2: #333;
+$color1: #eee;
+$color2: #ddd;
+$pcolor1: #555;
+$pcolor2: #333;
 
 button.async-btn-working:not(:disabled),
 button.async-btn-working:not(:disabled):hover,
@@ -137,6 +139,19 @@ button.async-btn-working:not(:disabled):active {
     );
     background-size: 2em 2em;
     animation: asyncAnim 2s linear infinite;
+  }
+
+  &.primary {
+    &::before {
+      background: repeating-linear-gradient(
+        45deg,
+        $pcolor1 25%,
+        $pcolor1 50%,
+        $pcolor2 50%,
+        $pcolor2 75%
+      );
+      background-size: 2em 2em;
+    }
   }
 }
 
