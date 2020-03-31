@@ -16,7 +16,7 @@ npm start
 
 // open another terminal
 cd vue-sso-example
-cd fromt
+cd front
 npm i
 npm start
 ```
