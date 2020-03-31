@@ -37,16 +37,29 @@ app.use("/action/connect-with-sso", sso.auth(), (req, res) => {
 
 app.post("/action/connect", async (req, res) => {
   try {
-    const credentials: UserCredential = {
+    let credentials: UserCredential = {
       domain: sso.getDefaultDomain(),
       user: req.body.login,
       password: req.body.password
     };
-    console.log('credentials: ', credentials);
+    const domainSeparator = "\\";
+    if (req.body.login.indexOf(domainSeparator) !== -1) {
+      const [domain, user] = (req.body.login as string).split(domainSeparator);
+      console.log("req.body.login: ", req.body.login);
+      console.log("domain: ", domain);
+
+      credentials = {
+        domain,
+        user,
+        password: req.body.password
+      };
+    }
+
+    console.log("credentials: ", credentials);
     req.session.sso = await sso.connect(credentials);
     res.json({ user: req.session.sso.user });
   } catch (error) {
-    console.log('error: ', error);
+    console.log("error: ", error);
     res.status(401).end();
   }
 });
